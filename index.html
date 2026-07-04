@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GLB-PCF Viewer</title>
+  <meta name="application-name" content="GLB-PCF Viewer">
+  <meta name="theme-color" content="#111827">
+  <link rel="icon" type="image/svg+xml" href="./assets/app-icon.svg">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="stylesheet" href="./styles/app.css">
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.1/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.1/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <aside class="app-side">
+      <header class="brand">
+        <img src="./assets/app-icon.svg" alt="" class="brand-icon">
+        <div>
+          <p class="brand-kicker">Standalone</p>
+          <h1>GLB-PCF Viewer</h1>
+        </div>
+      </header>
+
+      <section class="panel" aria-labelledby="load-heading">
+        <div class="panel-heading">
+          <h2 id="load-heading">Load Model</h2>
+          <span id="file-state" class="state-pill">No file</span>
+        </div>
+        <label class="file-drop" id="file-drop-zone" for="model-file">
+          <input id="model-file" type="file" accept=".glb,.gltf,.pcf,.GLB,.GLTF,.PCF">
+          <span class="file-drop-title">Choose or drop a file</span>
+          <span id="file-name" class="file-drop-name">GLB, GLTF, or PCF</span>
+        </label>
+        <button id="load-file" class="primary-action" type="button" disabled>Load Selected</button>
+      </section>
+
+      <section class="panel" aria-labelledby="samples-heading">
+        <div class="panel-heading">
+          <h2 id="samples-heading">Samples</h2>
+        </div>
+        <div class="button-grid">
+          <button id="load-pcf-sample" type="button">PCF Mock</button>
+          <button id="load-glb-sample" type="button">GLB Mock</button>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="tools-heading">
+        <div class="panel-heading">
+          <h2 id="tools-heading">Tools</h2>
+        </div>
+        <div class="button-grid">
+          <button id="fit-scene" type="button">Fit</button>
+          <button id="zoom-selected" type="button">Zoom Sel</button>
+          <button id="marquee-zoom" type="button" aria-pressed="false">MZoom</button>
+          <button id="measure-toggle" type="button" aria-pressed="false">Measure</button>
+        </div>
+        <div id="measure-readout" class="measure-readout">Measure off</div>
+      </section>
+
+      <section class="panel clip-panel" aria-labelledby="clip-heading">
+        <div class="panel-heading">
+          <h2 id="clip-heading">Clip Bounds</h2>
+          <button id="clip-reset" class="mini-action" type="button">Reset</button>
+        </div>
+        <div id="clip-sliders" class="clip-sliders" aria-disabled="true"></div>
+      </section>
+
+      <section class="panel debug-panel" aria-labelledby="debug-heading">
+        <div class="panel-heading">
+          <h2 id="debug-heading">Debug</h2>
+          <button id="clear-log" class="mini-action" type="button">Clear</button>
+        </div>
+        <div id="debug-logs" class="debug-logs" aria-live="polite"></div>
+      </section>
+    </aside>
+
+    <main class="viewer-area">
+      <header class="viewer-topbar">
+        <div>
+          <p class="viewer-kicker">Scene</p>
+          <div id="status" class="status-line">Ready</div>
+        </div>
+        <div id="viewer-toolbar" class="viewer-toolbar"></div>
+      </header>
+
+      <section class="viewer-stage" aria-label="3D viewport">
+        <div id="viewer-canvas" class="viewer-canvas"></div>
+        <div id="layer-panel-host" class="layer-panel-host"></div>
+        <div id="label-panel-host" class="label-panel-host"></div>
+        <div id="property-panel" class="property-panel">
+          <div class="property-panel-header">
+            <strong>Component Properties</strong>
+            <button id="close-properties" type="button" aria-label="Close properties">X</button>
+          </div>
+          <div id="property-content" class="property-content"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

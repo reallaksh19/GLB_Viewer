@@ -1,0 +1,13 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">GLB-PCF Viewer icon</title>
+  <desc id="desc">A technical cube, pipe bend, and clipped model plane.</desc>
+  <rect width="128" height="128" rx="22" fill="#111827"/>
+  <path d="M31 39h49l17 17v48H48L31 87V39Z" stroke="#8DB5FF" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M48 56h49M48 56v48M48 56 31 39M80 39l17 17" stroke="#3B5E94" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M32 79h25c10 0 18-8 18-18V45" stroke="#37C8AB" stroke-width="10" stroke-linecap="round"/>
+  <path d="M75 45V32" stroke="#37C8AB" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="32" cy="79" r="6" fill="#F8FAFC"/>
+  <circle cx="75" cy="32" r="6" fill="#F8FAFC"/>
+  <path d="M75 77 104 61v34l-29 16V77Z" fill="#F5A524" fill-opacity=".92"/>
+  <path d="M75 77 104 61v34l-29 16V77Z" stroke="#FFD58F" stroke-width="3" stroke-linejoin="round"/>
+</svg>

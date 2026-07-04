@@ -1,0 +1,16 @@
+{
+  "name": "GLB-PCF Viewer",
+  "short_name": "GLB-PCF",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "icons": [
+    {
+      "src": "./assets/app-icon.svg",
+      "sizes": "128x128",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
